@@ -1,0 +1,4 @@
+---
+
+- name: Execute the command in remote shell; stdout goes to the specified file on the remote.
+  shell: sdi-cli cluster nodes
