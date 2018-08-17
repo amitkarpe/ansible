@@ -2,15 +2,16 @@
 - hosts: master4
   remote_user: sevone
   tasks:
-  - name: Get list of Nodes by kube
-    shell: kubectl get nodes
+  - name: Get list of Pods by kube
+    shell: kubectl get pods
+    register: out
   - debug: var=out.stdout_lines
 
-- hosts: all
+- hosts: master4
   remote_user: sevone
   tasks:
-  - name: Get list of Nodes by sdi
-    command: sdi-cli nodes
+  - name: Get list of Pods by sdi
+    command: sdi-cli pods
     register: out
 
   - debug: var=out.stdout_lines
