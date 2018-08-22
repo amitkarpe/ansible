@@ -42,20 +42,22 @@
 
 **Output**
 
-`[root@master sdi]``# ansible-playbook -i master4 -u sevone  [ping.yaml](https://portal.sevone.com/display/~akarpe/ping.yaml)`
-
-`PLAY [master4]`
-
-`TASK [Gathering Facts] ok: [master4]`
-
-`TASK [``test`  `connection] ok: [master4]`
-
-`PLAY RECAP master4 : ok=2 changed=0 unreachable=0 failed=0`
+```bash
+[root@master sdi]# ansible-playbook -i master4 -u sevone ping.yaml
+ 
+PLAY [master4]
+ 
+TASK [Gathering Facts] ok: [master4]
+ 
+TASK [test connection] ok: [master4]
+ 
+PLAY RECAP master4 : ok=2 changed=0 unreachable=0 failed=0
+```
 
 [Blog URL](http://amitkarpe1.blogspot.com/2018/08/ansible-ping-example_21.html)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ5MjY1NDUxMCwtMTQ1MzMzNjI2NSwyNj
-k2NjA3NjAsLTI1NTA1MDcyNiwtMTk3NzI4Mzg5NiwtMTUxNTM3
-NDE2NywtNzc2ODc2NDg1XX0=
+eyJoaXN0b3J5IjpbLTE2ODkzMjIzNTcsLTE0NTMzMzYyNjUsMj
+Y5NjYwNzYwLC0yNTUwNTA3MjYsLTE5NzcyODM4OTYsLTE1MTUz
+NzQxNjcsLTc3Njg3NjQ4NV19
 -->
