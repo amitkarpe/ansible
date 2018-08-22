@@ -52,11 +52,16 @@ TASK [test connection] ok: [master4]
 PLAY RECAP master4 : ok=2 changed=0 unreachable=0 failed=0
 ```
 
+[Source](
+- ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `#f03c15`
+- ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) `#c5f015`
+- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `#1589F0`
+
 [Blog URL](http://amitkarpe1.blogspot.com/2018/08/ansible-ping-example_21.html)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA5MjA3ODg5MywtNDMyMTc1NjM2LC0xNj
-g5MzIyMzU3LC0xNDUzMzM2MjY1LDI2OTY2MDc2MCwtMjU1MDUw
-NzI2LC0xOTc3MjgzODk2LC0xNTE1Mzc0MTY3LC03NzY4NzY0OD
-VdfQ==
+eyJoaXN0b3J5IjpbLTk3NjgyNDU2NywxMDkyMDc4ODkzLC00Mz
+IxNzU2MzYsLTE2ODkzMjIzNTcsLTE0NTMzMzYyNjUsMjY5NjYw
+NzYwLC0yNTUwNTA3MjYsLTE5NzcyODM4OTYsLTE1MTUzNzQxNj
+csLTc3Njg3NjQ4NV19
 -->
