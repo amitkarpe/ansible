@@ -44,7 +44,7 @@
 
 **Output**
 
-```bash
+```shell
 [root@master sdi]# ansible-playbook -i master4 -u sevone ping.yaml
  
 PLAY [master4]
@@ -59,7 +59,8 @@ PLAY RECAP master4 : ok=2 changed=0 unreachable=0 failed=0
 [Blog URL](http://amitkarpe1.blogspot.com/2018/08/ansible-ping-example_21.html)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQzMjE3NTYzNiwtMTY4OTMyMjM1NywtMT
-Q1MzMzNjI2NSwyNjk2NjA3NjAsLTI1NTA1MDcyNiwtMTk3NzI4
-Mzg5NiwtMTUxNTM3NDE2NywtNzc2ODc2NDg1XX0=
+eyJoaXN0b3J5IjpbNTk3OTIzMTAyLC00MzIxNzU2MzYsLTE2OD
+kzMjIzNTcsLTE0NTMzMzYyNjUsMjY5NjYwNzYwLC0yNTUwNTA3
+MjYsLTE5NzcyODM4OTYsLTE1MTUzNzQxNjcsLTc3Njg3NjQ4NV
+19
 -->
