@@ -1,15 +1,3 @@
-New addition
-
-Lets see
-
-
-Some text with a footnote.[^1]
-
-[^1]: ID - 8087702999513274152
-
-[^2]: [Blog URL](http://amitkarpe1.blogspot.com/2018/08/ansible-ping-example_21.html)
-
-
 ### Playbok file @ ping.yaml
 
 
@@ -45,14 +33,13 @@ Some text with a footnote.[^1]
     
     [root@master sdi]#
 
-![Screenshot for commandoutput](https://lh3.googleusercontent.com/hesVoEdbINtp3tCrCaZpVcs4hFPllgfQz9TexL6_VZMvTg4p5JuERD-BTzLdBVyDSRNdVt9PeVlHBjfg3Yr4y2tBETFVIZTJIvFJSSTMiUta7G0WyXcFtfZHu_ypBt52e3Qb-yDmnQGTMnl1uys4StdTxdwObacWBlHQZaSKLJX74Bgjo3V91XP7_JBXkiijPn4uEKLd53_1j_VGPyXG3lSXAGm5KH-EUym9V68_dccYiMB9e165dzPTe6cz6YjjR8V70FMCVd863SOZUcB3yC95bm-z5LxsfGWcsqCvezkjFanm8-mEgrFiCuH0StP4cz9h16pl_5ks0doZrw-beIQghpc7xOHJUWeeNWyXERaOHAM7NSbs-WRM5ZXX0Byam9LBvbmS1wpUDvT0m-nS7tHQFOEZ2r1nAzlM2oA0osE4hvMEAEMFABi60xPtnH1AqGCy2J4-LSUfZBgMCtS2RPPcdMXWXLupi_XE93kmg8Jkfkt-vec3mpIG829JB9itRbALs7Mxy-mXHeIhmlEDilf2sq1tNfXAu3Sv5fP1kTmahD6jcsuJy9jkiGW-XaHHUzRz9qd7V3KH6LQVCavBET64kfSbHs0bAPaj28hqZ9AOryVLBXzyFBUX00JEIJwCIljLk1dnQO7BibmRKDZLVzg6oBn5NMy8UA=w1875-h333-no =500x60)
 
 
 More
 ![Output of command](https://lh3.googleusercontent.com/1WuYhO1XcQAcBkIV2qd3OfQ7qb7-besV8j6olACAMVcgtnSCanfFw-9nfFjZ8AdiyoMWp1wXDG8Z5g "output")
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0NTMzMzYyNjUsMjY5NjYwNzYwLC0yNT
-UwNTA3MjYsLTE5NzcyODM4OTYsLTE1MTUzNzQxNjcsLTc3Njg3
-NjQ4NV19
+eyJoaXN0b3J5IjpbMTg0Mjk2Mzg1NSwtMTQ1MzMzNjI2NSwyNj
+k2NjA3NjAsLTI1NTA1MDcyNiwtMTk3NzI4Mzg5NiwtMTUxNTM3
+NDE2NywtNzc2ODc2NDg1XX0=
 -->
