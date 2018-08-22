@@ -1,4 +1,6 @@
 Some text with a footnote.[^1]
+[^1]: The footnote. 
+[^2]: Blog URL
 
 ### Playbok file @ ping.yaml
 
@@ -42,7 +44,7 @@ More
 ![Output of command](https://lh3.googleusercontent.com/1WuYhO1XcQAcBkIV2qd3OfQ7qb7-besV8j6olACAMVcgtnSCanfFw-9nfFjZ8AdiyoMWp1wXDG8Z5g "output")
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjEyOTgxNDcxMywyNjk2NjA3NjAsLTI1NT
-A1MDcyNiwtMTk3NzI4Mzg5NiwtMTUxNTM3NDE2NywtNzc2ODc2
-NDg1XX0=
+eyJoaXN0b3J5IjpbODg1Mzg4NzMwLDI2OTY2MDc2MCwtMjU1MD
+UwNzI2LC0xOTc3MjgzODk2LC0xNTE1Mzc0MTY3LC03NzY4NzY0
+ODVdfQ==
 -->
