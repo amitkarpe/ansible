@@ -12,7 +12,10 @@
 
 
 #### Command 
-####### 
+##### Syntax
+
+    ansible-playbook -i <inventory filename> -u <username> ping.yaml
+
 ### Output
 
     [root@master sdi]# ansible-playbook -i master4 -u sevone ping.yaml
@@ -31,5 +34,5 @@
     [root@master sdi]#
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk1MzY1Nzg3MF19
+eyJoaXN0b3J5IjpbLTc3Njg3NjQ4NV19
 -->
