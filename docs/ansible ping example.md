@@ -33,8 +33,9 @@
     
     [root@master sdi]#
 
+
 ![Screenshot for commandoutput](https://drive.google.com/open?id=1JinausVN8TuuGH2lMzsBBZ4MMKGFwl3g)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5NzcyODM4OTYsLTE1MTUzNzQxNjcsLT
-c3Njg3NjQ4NV19
+eyJoaXN0b3J5IjpbLTI1NTA1MDcyNiwtMTk3NzI4Mzg5NiwtMT
+UxNTM3NDE2NywtNzc2ODc2NDg1XX0=
 -->
