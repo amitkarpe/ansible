@@ -1,9 +1,14 @@
 New addition
 
+Lets see
+
 
 Some text with a footnote.[^1]
+
 [^1]: ID - 8087702999513274152
+
 [^2]: [Blog URL](http://amitkarpe1.blogspot.com/2018/08/ansible-ping-example_21.html)
+
 
 ### Playbok file @ ping.yaml
 
@@ -47,7 +52,7 @@ More
 ![Output of command](https://lh3.googleusercontent.com/1WuYhO1XcQAcBkIV2qd3OfQ7qb7-besV8j6olACAMVcgtnSCanfFw-9nfFjZ8AdiyoMWp1wXDG8Z5g "output")
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE0MjcxODA3MCwyNjk2NjA3NjAsLTI1NT
-A1MDcyNiwtMTk3NzI4Mzg5NiwtMTUxNTM3NDE2NywtNzc2ODc2
-NDg1XX0=
+eyJoaXN0b3J5IjpbLTE0NTMzMzYyNjUsMjY5NjYwNzYwLC0yNT
+UwNTA3MjYsLTE5NzcyODM4OTYsLTE1MTUzNzQxNjcsLTc3Njg3
+NjQ4NV19
 -->
