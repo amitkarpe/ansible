@@ -1,14 +1,16 @@
 ### Playbok file @ ping.yaml
 
 
-    ---
-    - hosts: master4
+```yaml
+---
+- hosts: master4
+  remote_user: sevone
+  gather_facts: False
+  tasks:
+    - name: test connection
+      ping:
       remote_user: sevone
-      gather_facts: False
-      tasks:
-        - name: test connection
-          ping:
-          remote_user: sevone
+```      
 
 
 #### Command 
@@ -57,7 +59,7 @@ PLAY RECAP master4 : ok=2 changed=0 unreachable=0 failed=0
 [Blog URL](http://amitkarpe1.blogspot.com/2018/08/ansible-ping-example_21.html)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2ODkzMjIzNTcsLTE0NTMzMzYyNjUsMj
-Y5NjYwNzYwLC0yNTUwNTA3MjYsLTE5NzcyODM4OTYsLTE1MTUz
-NzQxNjcsLTc3Njg3NjQ4NV19
+eyJoaXN0b3J5IjpbLTQzMjE3NTYzNiwtMTY4OTMyMjM1NywtMT
+Q1MzMzNjI2NSwyNjk2NjA3NjAsLTI1NTA1MDcyNiwtMTk3NzI4
+Mzg5NiwtMTUxNTM3NDE2NywtNzc2ODc2NDg1XX0=
 -->
