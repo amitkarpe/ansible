@@ -32,10 +32,14 @@
     master4                    : ok=2    changed=0    unreachable=0    failed=0
     
     [root@master sdi]#
-
+![enter image description here](https://photos.app.goo.gl/L8TtUfHUXBsJv8S57)
 
 ![Screenshot for commandoutput](https://drive.google.com/open?id=1JinausVN8TuuGH2lMzsBBZ4MMKGFwl3g)
+
+
+More
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI1NTA1MDcyNiwtMTk3NzI4Mzg5NiwtMT
-UxNTM3NDE2NywtNzc2ODc2NDg1XX0=
+eyJoaXN0b3J5IjpbODI2NzM1NjQsLTI1NTA1MDcyNiwtMTk3Nz
+I4Mzg5NiwtMTUxNTM3NDE2NywtNzc2ODc2NDg1XX0=
 -->
