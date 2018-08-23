@@ -1,0 +1,23 @@
+# Install and configure snmpd
+
+---
+
+- hosts: centos5:centos6
+  gather_facts: yes
+  vars:
+  tasks:
+
+  - name: Install snmpd package
+    yum: name=net-snmp state=latest
+
+  - name: Enable snmpd service
+    service: name=snmpd enabled=yes
+    notify: Restart snmpd
+
+  - name: Template snmpd.conf
+    template: src=templates/etc-snmp-snmpd-conf.j2 dest=/etc/snmp/snmpd.conf owner=root group=root mode=644 backup=yes
+    notify: Restart snmpd
+
+  handlers:
+  - name: Restart snmpd
+    action: service name=snmpd state=restarted
