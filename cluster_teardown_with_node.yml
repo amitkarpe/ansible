@@ -1,0 +1,23 @@
+---
+- hosts: master1
+  remote_user: sevone
+  tasks:
+  - name: Get list of Nodes by sdi-cli
+    shell: sdi-cli nodes
+    register: out
+  - debug: var=out
+
+  - name: Teardown Cluster usind sdi-cli
+    raw: sdi-cli cluster teardown --delete-data -f;
+    register: out
+  - debug: var=out
+
+  - name: Reset worker node
+    shell: ssh node1 sudo kubeadm reset
+    register: out
+  - debug: var=out
+
+  - name: Get list of Nodes by sdi-cli
+    shell: sdi-cli nodes
+    register: out
+  - debug: var=out

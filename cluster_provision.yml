@@ -5,9 +5,9 @@
   - name: Porvision Cluster usind sdi-cli
     shell: sdi-cli cluster provision -y --single-node --size small --skip-sdi-extract --skip-kube-extract --bootstrap-args " -f -n -v --as-name 's57241' --tenant-name 'tenant_s57241' --username 'admin' --dsplugin-credentials 'admin:SevOne' --dsplugin-id 'dsplugin_s57241' --dsplugin-address '10.168.116.143:5052' --dsplugin-secure 'false' "
     register: out
-  - debug: var=out.stdout_lines
+  - debug: var=out
 
   - name: Get list of Nodes by sdi-cli
     shell: sdi-cli nodes
     register: out
-  - debug: var=out.stdout_lines
+  - debug: var=out

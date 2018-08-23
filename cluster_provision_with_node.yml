@@ -1,0 +1,17 @@
+---
+- hosts: master1
+  remote_user: sevone
+  tasks:
+  - name: Porvision Cluster usind sdi-cli
+#    shell: sdi-cli cluster provision -y --single-node --size small --skip-sdi-extract --skip-kube-extract --bootstrap-args " -f -n -v --as-name 's57241' --tenant-name 'tenant_s57241' --username 'admin' --dsplugin-credentials 'admin:SevOne' --dsplugin-id 'dsplugin_s57241' --dsplugin-address '10.168.116.143:5052' --dsplugin-secure 'false' "
+#     shell: host=s5723; node=node1; sdi-cli cluster provision -y --node-ip ${node} --size small --node-ip  --bootstrap-args " -f -n -v --as-name '${host}' --tenant-name 'tenant_${host}' --tenant-role '3' --username 'admin' --dsplugin-credentials 'admin:SevOne' --dsplugin-id 'ds_${host}' --dsplugin-address '${host}:5052' --dsplugin-secure 'false' "; sdi-cli nodes;
+#        shell: sdi-cli cluster provision -y --node-ip node1 --size small --bootstrap-args " -f -n -v --as-name 's5723' --tenant-name 'tenant_s5723' --tenant-role '3' --username 'admin' --dsplugin-credentials 'admin:SevOne' --dsplugin-id 'ds_s5723' --dsplugin-address 's5723:5052' --dsplugin-secure 'false' "; sdi-cli nodes;
+#        raw: sdi-cli cluster provision -y --node-ip node1 --size small --bootstrap-args " -f -n -v --as-name 's5723' --tenant-name 'tenant_s5723' --tenant-role '3' --username 'admin' --dsplugin-credentials 'admin:SevOne' --dsplugin-id 'ds_s5723' --dsplugin-address 's5723:5052' --dsplugin-secure 'false' "; sdi-cli nodes;
+      raw: sdi-cli cluster provision -y --node-ip 10.168.117.29 --size small --bootstrap-args " -f -n -v --as-name 's5723' --tenant-name 'tenant_s5723' --tenant-role '3' --username 'admin' --dsplugin-credentials 'admin:SevOne' --dsplugin-id 'ds_s5723' --dsplugin-address '10.168.118.18:5052' --dsplugin-secure 'false' "; sdi-cli nodes;
+    register: out
+  - debug: var=out
+
+  - name: Get list of Nodes by sdi-cli
+    shell: sdi-cli nodes
+    register: out
+  - debug: var=out
