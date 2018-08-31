@@ -1,0 +1,46 @@
+--- # Insall DI 1.4 while it will prompt setup detials from user
+# ansible-playbook  -i master5 di_install_with_prompt.yml
+# ansible-playbook  -i master5 di_install_with_prompt.yml --extra-vars="nms_host=akarpe562-1"
+
+- hosts: all
+  remote_user: sevone
+  gather_facts: False
+  vars_prompt:
+   - name: nms_hostname     # --extra-vars="foo=100 bar=101"
+     prompt: "Enter NMS Host name"
+     private: no
+   - name: nms_ipaddress   # --extra-vars="foo=100 bar=101"
+     prompt: "Enter NMS Host IP Address"
+     private: no
+   - name: sdi-cli-cmd1     # --extra-vars="foo=100 bar=101"
+     prompt: "Enter Data Insight Command 1"
+     private: no
+   - name: sdi-cli-cmd2     # --extra-vars="foo=100 bar=101"
+     prompt: "Enter Data Insight Command 1"
+     private: no
+
+  tasks:
+  - name: Show running pods or nodes
+    shell : sdi-cli pods 
+    #shell : ssh {{nms_hostname}} sdi-cli nodes
+    register: out
+#  - debug: var=out
+  - debug: msg={{ out.stdout }}
+  
+
+  - name: Show running pods or nodes
+    shell : sdi-cli pods
+    register: out
+#  - debug: var=out
+  - debug: msg={{ out.stdout }}
+
+
+  - name: Execute the command in remote shell; stdout goes to the specified file on the remote.
+#  shell: sdi-cli cluster teardown --delete-data -f
+    shell: sdi-cli nodes
+
+  - name: Execute the command in remote shell; stdout goes to the specified file on the remote.
+#  shell: sdi-cli cluster teardown --delete-data -f; sdi-cli cluster provision -y --single-node --size small --skip-sdi-extract --skip-kube-extract --bootstrap-args " -f -n -v --as-name 's57241' --tenant-name 'tenant_s57241' --username 'admin' --dsplugin-credentials 'admin:SevOne' --dsplugin-id 'dsplugin_s57241' --dsplugin-address '10.168.116.143:5052' --dsplugin-secure 'false' "
+    shell: sdi-cli cluster provision -y --single-node --size small --bootstrap-args " -f -n -v --as-name '{{nms_hostname}}' --tenant-name 'tenant_{{nms_hostname}}' --tenant-role '3' --username 'admin' --dsplugin-credentials 'admin:SevOne' --dsplugin-id 'ds_{{nms_hostname}}' --dsplugin-address '{{nms_ipaddress}}:5052' --dsplugin-secure 'false' ";
+    register: out
+  - debug: var=out 

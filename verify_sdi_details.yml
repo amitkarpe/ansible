@@ -1,0 +1,31 @@
+--- # ansible-playbook  verify_sdi_details.yml --extra-vars="nms_hostname=master5 mysql_name=mysql-6cfcd5bb6f-z5xkz " -i di --limit master5
+- name: sample playbook
+  hosts: all
+  remote_user: sevone
+  gather_facts: no
+  vars_prompt:
+   - name: mysql_name # --extra-vars="foo=100 bar=101"
+     prompt: "Enter MySQL pod / server name"
+     private: no
+
+  tasks:
+  - name: Show running pods or nodes
+    shell : sdi-cli pods 
+    register: out
+  - debug: msg={{ out.stdout_lines }}
+
+  - name: Check tenant and datasource details
+    shell : export mysql_name=$(/usr/bin/kubectl get pods | grep mysql | awk '{print $1}'); echo $mysql_name
+    register: out
+  - debug: msg={{out.stdout_lines}}
+
+  - name: Check datasources details from MySQL pod
+    shell: kubectl exec {{mysql_name}} -it -- /usr/bin/mysql -uroot -pdatainsight -te "select * from datainsight.datasources"
+    register: out
+  - debug: msg={{out.stdout_lines}}
+
+  - name: Check tenant details from MySQL pod
+    shell: kubectl exec {{mysql_name}} -it -- /usr/bin/mysql -uroot -pdatainsight -te "select id, name, authSourceId, createdAt, updatedAt, nmsRoleId, logoutURL  from datainsight.tenants"
+    register: out
+  - debug: msg={{out.stdout_lines}}
+  - debug: msg="System {{ inventory_hostname }}"

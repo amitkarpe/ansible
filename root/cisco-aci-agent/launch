@@ -1,0 +1,124 @@
+#!/bin/bash
+VERSION=v2.2.0
+SETTINGS_FILE=`pwd`/docker/settings.env
+UNPACK_PATH=`pwd`/redist
+SETTINGS_FILE=$2
+NAME=cisco-aci-agent-`date +%F-%H-%M-%S`-` echo '$SETTINGS_FILE' | base64`
+
+if [ $# -eq 0  ]; 
+	then echo "Usage : ./launch <run mode> [<settings env file>]" ;
+	echo "Run modes = [ setup | install | run | dry-count | dry-detail | profile ]";
+	echo "Settings file : and ENV file REQUIRED for all except setup";
+	exit;
+fi;
+
+if [ $1 = "setup" ]; then 
+	docker run --rm \
+	-v $UNPACK_PATH:/app/tmp \
+	--entrypoint "" \
+	-i docker.sevone.com/sc/collectors/cisco-aci:$VERSION \
+	sh -c "cp -r /app/redist/* /app/tmp";
+	
+	php -ddisplay_errors=E_ALL $UNPACK_PATH/setup_object_types.php
+	rpm -ivh --force $UNPACK_PATH/bin/autossh-1.4c-2.el6.x86_64.rpm
+	cp $UNPACK_PATH/sample_config/autossh_tunnel@.service /etc/systemd/system/autossh_tunnel@.service
+	cp $UNPACK_PATH/sample_config/autossh_tunnel@apic /etc/default/autossh_tunnel@apic
+	nano /etc/default/autossh_tunnel@apic
+	cat $UNPACK_PATH/sample_config/sshd_settings.txt >> /etc/ssh/sshd_config
+	systemctl restart sshd.service
+	systemctl daemon-reload
+	systemctl start autossh_tunnel@apic.service
+	systemctl enable autossh_tunnel@apic.service
+	exit;
+fi;
+
+if [ $# -eq 0  ] || [ $# -eq 1 ]; 
+	then echo "Usage : ./launch <run mode> <settings env file>" ;
+	echo "Run modes = [ setup | install | run | dry-count | dry-detail ]";
+	echo "Settings file : and ENV file REQUIRED for all except setup";
+	exit;
+fi;
+
+if [ ! -f $2 ] ; then
+	echo "$2 is an invalid EVN file path"
+	exit;
+fi;
+
+if [ $1 = "install" ] ; then 
+	docker run --rm \
+	-v aci_volume:/app/src/config \
+	--name=$NAME \
+	--env-file $SETTINGS_FILE \
+	-i docker.sevone.com/sc/collectors/cisco-aci:$VERSION \
+	--create_missing_types \
+	${@:3} 2>&1
+	exit;
+fi;
+
+if [ $1 = "run" ] ; then 
+	docker run --rm \
+	-v aci_volume:/app/src/config \
+	--name=$NAME \
+	--env-file $SETTINGS_FILE \
+	-i docker.sevone.com/sc/collectors/cisco-aci:$VERSION \
+	${@:3} 2>&1
+	exit;
+fi;
+
+if [ $1 = "dry-count" ] ; then 
+	docker run --rm \
+	-v aci_volume:/app/src/config \
+	--name=$NAME \
+	--env-file $SETTINGS_FILE \
+	-i docker.sevone.com/sc/collectors/cisco-aci:$VERSION \
+	--dry_run \
+	${@:3} 2>&1
+	exit;
+fi;
+
+if [ $1 = "dry-detail" ] ; then 
+	docker run --rm \
+	-v aci_volume:/app/src/config \
+	--name=$NAME \
+	--env-file $SETTINGS_FILE \
+	-i docker.sevone.com/sc/collectors/cisco-aci:$VERSION \
+	--dry_run --dry_run_detailed \
+	${@:3} 2>&1
+	exit;
+fi;
+
+if [ $1 = "profile" ] ; then
+	docker run --rm \
+	-v $UNPACK_PATH:/app/tmp \
+	-v `pwd`/stats:/app/stats \
+	--env-file $SETTINGS_FILE \
+	--entrypoint "python"  \
+	-i docker.sevone.com/sc/collectors/cisco-aci:$VERSION \
+	"/app/src/main_profile.py" ${@:3} 2>&1
+	exit;
+fi;
+
+if [ $1 = "debug" ] ; then
+	docker run --rm \
+	-v $UNPACK_PATH:/app/tmp \
+	-v `pwd`/stats:/app/stats \
+	--env-file $SETTINGS_FILE \
+	-p 7799:7799 \
+	--entrypoint "python"  \
+	-i docker.sevone.com/sc/collectors/cisco-aci:$VERSION \
+	"/app/src/main_debug.py" ${@:3} 2>&1
+	exit;
+fi;
+
+if [ $1 = "sim" ] ; then 
+	docker run --rm \
+	-v aci_sim_volume:/app/src/config \
+	-v `pwd`/mount:/app/mount \
+	--name=$NAME-sim \
+	--env-file $SETTINGS_FILE \
+	-i docker.sevone.com/sc/collectors/cisco-aci:$VERSION \
+	--sim_run \
+	${@:3} 2>&1
+	exit;
+fi;
+

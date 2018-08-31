@@ -1,0 +1,24 @@
+---
+# ansible-playbook  -i master5 di_install_with_prompt.yml
+# ansible-playbook  -i master5 di_install_with_prompt.yml --extra-vars="nms_host=akarpe562-1"
+# ansible-playbook  -i master5 di_install_with_prompt.yml --extra-vars="package_name=nginx"
+- hosts: all
+  gather_facts: False
+  vars_prompt:
+  - name: package_name
+    prompt: "Enter package name"
+    private: false          
+  tasks:
+    - name: Install {{package_name}} 
+      yum: pkg={{package_name}} state=installed update_cache=true
+#      register: apt-out
+      notify:
+        - start {{package_name}}
+#    - debug: msg={{apt-out.stdout}}
+
+    - name: start {{package_name}}
+      service: name={{package_name}} state=started
+#      register: out
+
+#    - debug: var=out.stdout
+    #- debug: msg={{out.stdout}}

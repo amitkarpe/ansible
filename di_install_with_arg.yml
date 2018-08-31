@@ -1,0 +1,42 @@
+---
+- name: sample playbook
+#  hosts: localhost
+# Insall DI 1.4 while it will prompt setup detials from user
+# ansible-playbook  -i master5 di_install_with_prompt.yml
+# ansible-playbook  reinstall.yml --extra-vars="nms_hostname=master5 mysql_name=mysql-6cfcd5bb6f-z5xkz " -i di --limit master5
+  hosts: all
+  remote_user: sevone
+  #become: yes
+  gather_facts: no
+  vars_prompt:
+   - name: nms # --extra-vars="foo=100 bar=101"
+     prompt: "Enter NMS hostname / DSPlugin System name"
+     private: no
+   - name: nms_ip
+     prompt: "Enter NMS IP Address / DSPlugin IP Address"
+     private: no
+   - name: rollid     # --extra-vars="foo=100 bar=101"
+     prompt: "Enter NMS user (admin) role ID"
+     private: no
+   - name: username     # --extra-vars="foo=100 bar=101"
+     prompt: "Enter NMS user (admin) name"
+     private: no
+   - name: password     # --extra-vars="foo=100 bar=101"
+     prompt: "Enter NMS user (admin) password"
+     private: no
+
+  tasks:
+  - name: Show running pods or nodes
+    shell : sdi-cli pods 
+    register: out
+  - debug: msg={{ out.stdout_lines }}
+
+  - name: Show running pods or nodes
+    shell: sdi-cli nodes
+    register: out
+  - debug: msg={{out.stdout_lines}}
+
+  - name: Show running pods or nodes
+    shell: sdi-cli cluster provision -y --single-node --size small --bootstrap-args " -f -n -v --as-name '{{nms}}' --tenant-name 'tenant_{{nms}}' --tenant-role '{{rollid}}' --username '{{username}}' --dsplugin-credentials '{{username}}:{{password}}' --dsplugin-id 'ds_{{nms}}' --dsplugin-address '{{nms_ip}}:5052' --dsplugin-secure 'false' ";
+    register: out
+  - debug: msg={{out.stdout_lines}}

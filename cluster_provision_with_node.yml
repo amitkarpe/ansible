@@ -15,3 +15,7 @@
     shell: sdi-cli nodes
     register: out
   - debug: var=out
+# sdi-cli cluster provision -y --single-node --size small --bootstrap-args " -f -n -v --as-name '{{nms_host}}' --tenant-name 'tenant_{{nms_host}}' --tenant-role '3' --username 'admin' --dsplugin-credentials 'admin:SevOne' --dsplugin-id 'ds_{{nms_host}}' --dsplugin-address '{{nms_ipaddress}}:5052' --dsplugin-secure 'false' "; sdi-cli nodes;
+#ssh sevone@master4 "export mysql_name=$(/usr/bin/kubectl get pods | grep mysql | awk '{print $1}'); echo $mysql_name"
+#kubectl exec $mysql_name -it -- /usr/bin/mysql -uroot -pdatainsight -e "select * from datainsight.datasources"
+# sdi-cli cluster provision -y --single-node --size small --bootstrap-args " -f -n -v --as-name '{{nms}}' --tenant-name 'tenant_{{nms}}' --tenant-role '{{rollid}}' --username '{{username}}' --dsplugin-credentials '{{username}}:{{password}}' --dsplugin-id 'ds_{{nms}}' --dsplugin-address '{{nms_ip}}:5052' --dsplugin-secure 'false' ";

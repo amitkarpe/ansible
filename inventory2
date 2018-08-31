@@ -1,0 +1,189 @@
+[aci]
+10.168.116.160	ak-aci-1					# SolutionCentral-Cisco-ACI-Agent-V1.0.ova		SevOne version:     5.7.1.3 @ http://artifactory01.devops.sevone.com/Solutions/SDN/ACI/1.0/SolutionCentral-Cisco-ACI-Agent-V1.0.ova
+
+10.168.116.91	ak-aci-2					# ssh sevone@ak-aci-2  P: sevone   	SevOne @ 10.168.116.104	ak572-5  & 6
+10.168.116.97	ak-aci-3	 				# ssh sevone@ak-aci-3  P: sevone 	SevOne @ 10.168.116.139 ak572-4
+10.168.116.226	ak-aci-4	 				# ssh sevone@ak-aci-4  P: sevone 	SevOne @ 10.168.116.203 ak572-7		CentOS 7.4 & SevOne version:     5.7.2.0
+10.168.116.237	ak-aci-5	 				# ssh sevone@ak-aci-5  P: sevone 	SevOne @ 10.168.116.203 ak572-7		CentOS 7.5 for Docker
+10.168.117.33	ak-aci-6					# ssh sevone@ak-aci-6  P: sevone 	SevOne @ 10.168.116.203 ak572-7		CentOS 7.5 for Docker
+10.168.117.48	ak-aci-7					# ssh sevone@ak-aci-7  P: sevone 	SevOne @ 10.168.116.203 ak572-7		CentOS 7.5 for Docker
+10.168.118.238	ak-aci-8
+192.168.37.214	aci-ova1					# ssh sevone@aci-ova1  P: sevone 	SevOne @ 10.168.116.203 ak572-6		CentOS 7.5 for Docker
+192.168.37.213	aci-ova2					# ssh sevone@aci-ova2  P: sevone 	SevOne @ 10.168.116.203 ak572-6		CentOS 7.5 for Docker
+
+
+10.168.117.5	akarpe-centos1 # faster
+10.168.118.152	akarpe-centos2	# 	ssh sevone@akarpe-centos2
+10.168.116.177	akarpe-centos3  #   ssh sevone@akarpe-centos3
+10.129.15.29	akarpe-centos4  #   ssh sevone@akarpe-centos4
+10.168.116.90	OpenShift1 os1 # 3.5
+10.168.117.221  OpenShift2 os2 # 3.9
+10.168.116.76   OpenShift3 os3 # 3.7
+10.168.119.110	OpenShift4 os4 # 3.5
+10.168.117.123  OpenShift2 os5 # 3.9
+10.168.116.110	master		master.lab.example.com			# Ansible
+10.168.117.78	node11		node1.lab.example.com
+10.168.119.135	node2		node2.lab.example.com
+10.168.116.204	node3		node3.lab.example.com		#https://735a6d23.ngrok.io
+10.168.116.200	ans		node4		node4.lab.example.com		#https://740fd4f5.ngrok.io/
+10.168.116.53	workstation		workstation.lab.example.com
+
+10.168.117.221  console.support.nip.io
+
+10.129.13.114	EDS-DI
+10.129.13.214	eds-aci EDS-ACI-docker
+10.128.22.243	eds-acip EDS-ACI-PAS
+10.129.13.57	eds-acid EDS-ACI-DI
+################       Data Insigt - password pass
+10.128.18.102 	akarpe-insight1
+10.168.21.178   steve-di
+10.168.117.97	ak-di13-1			#dRum&5853
+10.168.116.131	ak-sdi12-1 			# root:faster  di:sevone http://ak572-4.sevone.com/api/v2
+10.168.116.100	ak-sdi12-2
+10.128.18.71	akarpe-insight2		# del
+10.168.117.131	master1			#dRum&5853
+10.168.117.29	node1			#dRum&5853
+10.168.116.66	node1.2			#dRum&5853
+10.168.118.18	s5723			#faster    dRum&5853			10.168.118.18:5052		http://ecd241f3.ngrok.io
+10.168.117.65	s5723-1			#faster    dRum&5853			10.168.118.18:5052
+
+10.168.116.239	master2				#dRum&5853	http://3150ca17.ngrok.io
+10.168.116.226	node2.1				#dRum&5853
+10.168.118.209	node2.2				#dRum&5853
+10.168.118.215	s5724				#faster		http://de2bb1ba.ngrok.io			http://02a9ba2e.ngrok.io
+10.168.117.36	master3			#dRum&5853
+10.168.118.2	master4			#dRum&5853			s57241
+10.168.118.234	master5			#dRum&5853			s57241
+
+10.133.37.83	ak-di141
+
+################       PLA - password pass
+# https://portal.sevone.com/display/PCD/SevOne+PLA+Installation+Guide
+# root/faster
+10.168.117.213	akarpe-2.3-00
+10.168.116.117	akarpe-2.3-01
+10.168.117.231	akarpe-2.3-02		# admin/pass
+10.168.118.87	akarpe-23-1
+10.168.116.157	akarpe-23-2			# [PLA: 2.3.1.5]
+
+10.203.65.75   pla-us
+10.168.118.248  akarpe-pla1	#root/dRum&5853
+192.168.49.100	sl2 #spla2.sevone.com
+#jbhathena-sl2-01	10.168.119.142	#PLA - password pass
+#jbhathena-sl2-02	10.168.117.153	#PLA - password pass
+10.168.96.78 	akarpe-spla23-02
+
+###### Laptop VM ######
+
+192.168.0.117 	s562-1
+192.168.175.128	s571-1
+192.168.175.129	vm-ubuntu1
+################       Support Boxen			https://docs.google.com/spreadsheets/d/1zodNbLbfiA_T3PfSZrWRzGVGXoaG2LEtwf2BGIP-neg/edit#gid=0
+
+10.168.118.47	s550
+10.168.118.48	s5501
+10.168.118.109	s551
+
+10.168.119.192  akarpe-Win10Ent-59754 win1
+10.168.117.189	akarpe-Win10Enterprise-61244 win2
+192.168.30.4	supersamb.sevone.com supersamb
+
+# password sevone
+#10.168.116.215	akarpe-ubuntu
+10.168.116.212	ubuntu2 akarpe-ubuntu2
+10.168.117.26	akarpe-ubuntu3
+10.168.117.4	akarpe-ubuntu4			# UP - halt for VIP testing
+10.168.118.95	akarpe-ubuntu5			# UP - halt for VIP testing
+10.168.116.135	akarpe-ubuntu6
+
+################       SVM
+
+
+10.168.156.102	us1		pas544
+10.168.156.97 	us2 	pas543
+192.168.133.65	us3		pas542  amit-PAS2
+192.168.129.253 us4		pas550  amit-PAS3
+10.168.156.151  us5     pal20
+10.168.156.144  us6     pal20
+################       TEMP
+
+192.168.49.63 s54master
+192.168.49.64 s54slave
+
+192.168.37.231 s533-1
+10.168.119.165 s533-3
+192.168.49.253	jimmy1
+10.168.96.131	vmtest
+################       EXTRA
+
+# Support Boxen --> https://docs.google.com/spreadsheets/d/1zodNbLbfiA_T3PfSZrWRzGVGXoaG2LEtwf2BGIP-neg/edit?ts=572c2c02#gid=0
+#192.168.49.4	s539
+
+# https://10.194.30.67  root/calvin idrac.lab in Sofia
+10.194.30.67   idrac.lab
+192.168.37.191	s52dnc  dnc
+10.168.119.126 s5210b
+
+
+172.21.36.50 big_test1 # 1187 devices  sevone_decrypt(ro_community) - sevitlab-ro
+172.21.36.136 big_test2 # 5563 devices
+
+
+
+
+################       LOCAL	543
+192.168.0.120			v1
+192.168.0.110			v2
+169.254.24.100			h
+#10.120.152.249 vpas1  v1
+192.168.0.107			h2
+#169.254.72.177			h3
+#192.168.0.111			h3
+#169.254.170.241		h3
+10.120.152.240			h3
+
+################       LOCAL	Ubuntu    sevone/sevone
+#192.168.0.121  ubuntu1 u1
+10.120.152.237  ubuntu1 u1
+192.168.0.131  ubuntu2 u2
+192.168.0.141  ubuntu3 u3
+192.168.0.70  ubuntu4 u4
+192.168.0.50  ubuntu4 u5
+10.0.2.6		 	u1.2
+10.120.152.237 		u1.3
+192.168.56.102 		u1.4
+192.168.122.1		u1.5
+10.0.2.7		 	u2.2
+################       LOCAL		5.5
+192.168.0.80 		v10
+192.168.0.81		v11
+
+
+# PLA
+# https://sevstack.sevone.com/horizon/project/instances/b6191137-6e28-4047-9780-275d933a146b/
+
+# OLD - deleted
+#10.168.119.242 akarpe-s543-01 master
+#10.168.119.233 akarpe-s543-02 peer1
+#10.168.119.232 akarpe-s543-03 peer2
+#10.168.119.227 akarpe-s543-04 peer3
+10.168.49.77
+10.168.119.167 s543  oracle
+10.168.117.174 akarpe-s5501-01 test1 # faster
+10.168.119.67 akarpe-s5501-02 test2
+10.168.119.79 akarpe-s5501-03 test3
+10.168.117.156 akarpe-s5501-04 test4	#CM
+10.168.117.159 akarpe-s5501-05 test5	#peer -- down
+10.168.119.40 akarpe-s5501-06 test6	#peer
+10.168.117.128 akarpe-s5501-07 test7 #peer
+
+#search sevone.com wifi.sevone.com wilm.sevone.com nwk.sevone.com
+#nameserver 10.168.0.50
+#nameserver 10.193.0.50
+#nameserver 10.1.2.3
+#nameserver 10.2.3.4
+#nameserver 8.8.8.8
+
+10.133.37.18 dt-pas
+10.133.37.77 dt-di
+10.133.37.116	aks5724
