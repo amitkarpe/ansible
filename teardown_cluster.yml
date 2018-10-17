@@ -1,3 +1,4 @@
+# This is going to delete cluster
 ---
 - hosts: master4
   remote_user: sevone
